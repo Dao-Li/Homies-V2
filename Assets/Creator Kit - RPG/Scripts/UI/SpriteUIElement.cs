@@ -60,7 +60,7 @@ namespace RPGM.UI
             {
                 t = Mathf.Clamp01(t + (direction * Time.deltaTime / animationDuration));
 
-                animationOffset = Vector2.LerpUnclamped(hideOffset, Vector3.zero, curve.Evaluate(t));
+                animationOffset = -Vector2.LerpUnclamped(hideOffset, Vector3.zero, curve.Evaluate(t));
                 var p = (Vector2)camera.ViewportToWorldPoint(anchor + offset + animationOffset);
                 transform.position = p;
                 if (pixelPerfectCamera != null && Application.isPlaying)
